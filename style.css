@@ -1,18 +1,37 @@
+/* Light Mode Colors */
+:root {
+    --bg: #f5f5f5;
+    --container-bg: white;
+    --text: #000;
+    --card: #ececec;
+}
+
+/* Dark Mode Colors */
+.dark-mode {
+    --bg: #121212;
+    --container-bg: #1e1e1e;
+    --text: #ffffff;
+    --card: #2c2c2c;
+}
+
 body {
-    background: #f5f5f5;
+    background: var(--bg);
     font-family: Arial, sans-serif;
+    color: var(--text);
+    transition: background 0.3s, color 0.3s;
 }
 
 .container {
-    width: 350px;
-    margin: 80px auto;
-    background: white;
+    width: 400px;
+    margin: 50px auto;
+    background: var(--container-bg);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    transition: background 0.3s;
 }
 
-h1 {
+h1, h2 {
     text-align: center;
 }
 
@@ -21,14 +40,14 @@ h1 {
     gap: 10px;
 }
 
-#taskInput {
+input {
     flex: 1;
     padding: 10px;
     border-radius: 6px;
     border: 1px solid #aaa;
 }
 
-#addBtn {
+button {
     padding: 10px 15px;
     background: #4CAF50;
     color: white;
@@ -37,17 +56,51 @@ h1 {
     cursor: pointer;
 }
 
-#taskList {
+.theme-toggle {
+    text-align: center;
     margin-top: 20px;
+}
+
+#themeBtn {
+    background: #333;
+}
+
+ul {
     list-style: none;
     padding: 0;
 }
 
 li {
-    background: #ececec;
+    background: var(--card);
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 6px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s;
+}
+
+.complete-btn {
+    background: #2196F3;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.delete-btn {
+    background: #E53935;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.undo-btn {
+    background: #FF9800;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 6px;
+    cursor: pointer;
 }
